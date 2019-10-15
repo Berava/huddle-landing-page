@@ -14,8 +14,10 @@
 body {
   color: #fff;
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
+  scroll-behavior: smooth;
   text-align: center;
+  text-rendering: optimizeSpeed;
 }
 
 h1 {
@@ -30,9 +32,11 @@ img {
   background-color: var(--clr-primary);
   background-image: url(../img/bg-mobile.svg);
   background-repeat: no-repeat;
-  height: 100vh;
+  /* background-size: cover; */
+  /* background-position: top; */
+  min-height: 100vh;
   margin: 0 auto;
-  max-width: 375px;
+  /* max-width: 375px; */
   padding: 1.5rem 2rem;
 }
 
@@ -52,6 +56,14 @@ img {
   margin-bottom: 1.2rem;
 }
 
+.footer {
+  margin-top: 4rem;
+}
+
+.social > *:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
 /* Utility class */
 .btn {
   all: unset;
@@ -61,6 +73,7 @@ img {
   color: var(--clr-primary);
   cursor: pointer;
   display: inline-block;
+  font-family: 'Poppins', sans-serif;
   padding: 1rem 6rem;
   position: relative;
   text-align: center;
@@ -107,10 +120,40 @@ img {
   background-color: #fff;
 }
 
-.footer {
-  margin-top: 4rem;
+@media only screen and (min-width: 376px) {
+  .container {
+    background-size: cover;
+  }
 }
 
-.social > *:not(:last-child) {
-  margin-right: 2rem;
+@media only screen and (min-width: 960px) {
+  .container {
+    background-image: url(../img/bg-desktop.svg);
+  }
+  .right-area {
+    text-align: left;
+    padding-right: 10rem;
+  }
+  .mockups {
+    margin-top: 5rem;
+  }
+  .btn {
+    padding: 0.5rem 3rem;
+  }
+  .footer {
+    text-align: right;
+  }
+  .social > i:last-child {
+    margin-right: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .btn {
+    padding: 1rem 5rem;
+  }
+
+  .right-area {
+    margin-right: 2rem;
+  }
 }
